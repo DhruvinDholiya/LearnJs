@@ -1,25 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            line-height: 110%;
+            font-weight: 400;
+            padding: 100px 0;
+            color: #262626;
+        }
+        #mark_sheet {
+            max-width: 775px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            padding: 30px 50px;
+            background-color: #fffdd0;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .text_left {
+            text-align: left;
+        }
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        h3::after {
+            content: '';
+            height: 1px;
+            display: block;
+            position: absolute;
+            bottom: -6px;
+            width: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top: 1px solid #262626;
+            border-bottom: 1px solid #262626;
+
+        }
+        h6 {
+            margin-bottom: 6px;
+        }
+    </style>
 </head>
+
 <body>
+
     
-    <p>Name: <span id="name"></span></p>
-    <p>Roll No: <span id="rollNo"></span></p>
-
-    <p>Pysics: <span id="phyMark"></span></p>
-    <p>Chemistry: <span id="chemMark"></span></p>
-    <p>Biology: <span id="BioMark"></span></p>
-
-    <p>Scored marks: <span id="scoredMarks"></span>/300</p>
-    <p>Result: <span id="persantage"></span>%</p>
+    <div id="mark_sheet">
+        <h6>* You can create marksheet of B group students of science stream here.</h6>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <h3>MARKSHEET</h3>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="text_left">
+                    <p>Student Name: <span id="nameData"></span></p>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2" class="text_left">
+                    <p>Roll No: <span id="rnData"></span></p>
+                </th>
+                <th colspan="2" class="text_left">
+                    <p>Date:  <span id="dtData"></span></p>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <p>Subject's No.</p>
+                </th>
+                <th>
+                    <p>Subject's Name</p>
+                </th>
+                <th>
+                    <p>Obtain Marks</p>
+                </th>
+                <th>
+                    <p>Total Marks</p>
+                </th>
+            </tr>
+            <tr>
+                <th><p>1</p></th>
+                <td><p>Pysics</p></td>
+                <td><p><span id="phyMark"></span></p></td>
+                <td><p>100</p></td>
+            </tr>
+            <tr>
+                <th><p>2</p></th>
+                <td><p>Chemistry</p></td>
+                <td><p><span id="chemMark"></span></p></td>
+                <td><p>100</p></td>
+            </tr>
+            <tr>
+                <th><p>3</p></th>
+                <td><p>Biology</p></td>
+                <td><p><span id="bioMark"></span></p></td>
+                <td><p>100</p></td>
+            </tr>
+            <tr>
+                <th><p>4</p></th>
+                <td><p>English</p></td>
+                <td><p><span id="engMark"></span></p></td>
+                <td><p>100</p></td>
+            </tr>
+            <tr>
+                <th><p>5</p></th>
+                <td><p>Sanskrit</p></td>
+                <td><p><span id="sansMark"></span></p></td>
+                <td><p>100</p></td>
+            </tr>
+            <tr>
+                <td colspan="4"><p><b>Totle Marks: <span id="scoredMarks"></span>/500</b></p></td>
+            </tr>
+            <tr>
+                <td colspan="4"><p><b><em>*Congratulations for obtain </em><span id="persantage"></span><em>% Percentage in 12th.</em></b></p></td>
+            </tr>
+        </table>
+    </div>
 
 
 
     <script src="../js/2_output.js"></script>
 </body>
+
 </html>
