@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            line-height: 110%;
+            font-weight: 400;
+        }
+
+        form {
+            padding: 50px;
+            width: 500px;
+            margin: 50px auto;
+            background-color: #d7f4fa;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+
+        .input_filed {
+            width: 100%;
+            position: relative;
+        }
+
+        input,
+        select,
+        button {
+            outline: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            padding: 15px 20px;
+            width: 100%;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #000;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        input::placeholder {
+            color: #000;
+        }
+
+        button {
+            display: block;
+            max-width: 150px;
+            margin: 50px auto 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: #000;
+            color: #d7f4fa;
+        }
+
+        #error {
+            color: #ff0000;
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="" onsubmit="return false">
+        <div class="input_filed">
+            <input type="text" placeholder="Your name" id="getValue">
+            <span id="error"></span>
+        </div>
+        <button id="submitBtn">Submit</button>
+    </form>
+
+    <script src="../js/12_focus_blur.js"></script>
+</body>
+
+</html>

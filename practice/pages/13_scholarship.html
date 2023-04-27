@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Calculater</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            line-height: 110%;
+            font-weight: 400;
+        }
+
+        h4 {
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .scholarship_clac {
+            padding: 50px;
+            width: 580px;
+            margin: 50px auto;
+            background-color: #d7f4fa;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+
+        .row {
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 150px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        input,
+        select,
+        button {
+            outline: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            padding: 14px 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #000;
+            width: 100%;
+            color: #808080;
+        }
+
+        button {
+            display: block;
+            max-width: 150px;
+            margin: 20px 0 0;
+            text-transform: uppercase;
+            padding: 12px;
+            cursor: pointer;
+            background: #000;
+            color: #d7f4fa;
+        }
+        #ans {
+            font-size: 16px;
+            display: flex;
+        }
+        #massage {
+            margin-left: 5px;
+        }
+        #massage .invalid {
+            color: red;
+        }
+        #massage .warning {
+            color: rgb(139, 139, 0);
+        }
+        #massage .valid {
+            background-color: white;
+            color: green;
+            border-radius: 5px;
+            padding: 5px 8px;
+            margin: 2px 0;
+            height: 30px;
+            min-width: 30px;
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scholarship_clac">
+        <h4>Scholarship Calculator</h4>
+        <form method="post" autocomplete="off" onsubmit="return false">
+
+            <div class="row">
+                <Label>Fees Amount:</Label>
+                <input type="text" name="fees" id="fees" placeholder="">
+            </div>
+            <div class="row">
+                <Label>CGPA:</Label>
+                <input type="text" name="cgpa" id="cgpa" placeholder="">
+            </div>
+            <div class="row">
+                <Label>Cast:</Label>
+                <select id="cast">
+                    <option value="">-- Select here --</option>
+                    <option value="open">Open</option>
+                    <option value="obc">OBC</option>
+                    <option value="sc">SC</option>
+                    <option value="st">ST</option>
+                </select>
+
+            </div>
+            <div class="row">
+                <Label></Label>
+                <button id="submitBtn">Submit</button>
+            </div>
+        </form>
+        <p id='ans'><b>ANS: </b> <span id="massage"></span></p>
+    </div>
+
+    <script src="../js/13_scholarship.js"></script>
+</body>
+
+</html>

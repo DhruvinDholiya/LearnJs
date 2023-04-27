@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            line-height: 110%;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 25px;
+            text-align: center;
+            margin: 75px 0 40px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .treatment_block {
+            padding: 50px;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            background-color: #d7f4fa;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .row:not(:first-child) {
+            margin-top: 25px;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 170px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        input,
+        select,
+        button {
+            outline: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            padding: 12px 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #000;
+            width: 100%;
+            color: #808080;
+            height: 48px;
+        }
+
+        input+span {
+            position: absolute;
+            bottom: -20px;
+            font-size: 14px;
+        }
+
+        .invalid {
+            color: #ff0000;
+        }
+
+        select option:disabled {
+            font-size: 0;
+        }
+
+        button {
+            display: block;
+            max-width: fit-content;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            cursor: pointer;
+            background: #000;
+            color: #d7f4fa;
+            margin-top: 10px;
+        }
+
+        #treatmentDetailsBlock,
+        #treatmentsPlan {
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #treatmentDetailsBlock table {
+            margin: 60px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            width: 25%;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        tr th:first-child,
+        tr td:first-child {
+            width: 50%;
+        }
+
+        th {
+            font-size: 17px;
+            height: 55px;
+        }
+
+        td {
+            font-size: 16px;
+            height: 40px;
+            background-color: #eafbff;
+
+        }
+
+        #treatmentsPlan tr th:first-child,
+        #treatmentsPlan tr td:first-child {
+            width: 15%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Clinic Appoiment</h2>
+    <div class="treatment_block">
+        <form>
+            <div class="row">
+                <Label>Treatments:</Label>
+                <select id="treatment" onchange="Treatments()">
+                    <option value="" disabled selected>-- Select Here --</option>
+                    <option value="TC">Teeth Cleanings</option>
+                    <option value="FL">Fillings</option>
+                    <option value="RCT">Root Canal Treatment</option>
+                    <option value="RC">RCT + Cover</option>
+                    <option value="BI">Braces/Invisalign</option>
+                </select>
+                <span></span>
+            </div>
+        </form>
+        <object data="../pages/7_time_msg.html" type="auto"></object>
+        <div id="treatmentDetailsBlock">
+            <table>
+                <tr>
+                    <th>Treatments</th>
+                    <th>Seating</th>
+                    <th>Costing</th>
+                </tr>
+                <tr>
+                    <td><span id="treatmentSelect"></span></td>
+                    <td><span id="seatingSelect"></span></td>
+                    <td><span id="costingSelect"></span></td>
+                </tr>
+            </table>
+            <div class="row">
+                <label>Appoiment Date: </label>
+                <input type="date" name="appoiment_data" id="aptDate">
+                <span></span>
+            </div>
+            <div class="row">
+                <label></label>
+                <button type="submit" id="bookApt">Book Appoiment</button>
+            </div>
+        </div>
+    </div>
+    <div class="treatment_block" id="treatmentsPlan">
+        <h3>Your Treatment schedule.</h3>
+        <table>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Date</th>
+                <th>Charge</th>
+            </tr>
+        </table>
+    </div>
+    <script src="../js/15_treatment.js"></script>
+</body>
+
+</html>

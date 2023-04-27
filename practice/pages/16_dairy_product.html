@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amul Dairy - Product system</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            line-height: 110%;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 25px;
+            text-align: center;
+            margin: 75px 0 40px;
+            text-transform: uppercase;
+        }
+
+        .product_block {
+            padding: 50px;
+            max-width: 650px;
+            margin: 0 auto 60px;
+            background-color: #d7f4fa;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+        }
+        .product_block + .product_block {
+            padding: 25px;
+            display: none;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .row:not(:first-child) {
+            margin-top: 25px;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 180px;
+            text-align: right;
+            padding-right: 15px;
+        }
+        input + label {
+            min-width: 130px;
+            padding-right: 0;
+            padding-left: 15px;
+            text-align: left;
+            font-size: 15px;
+        }
+        #milkField {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        #milkField input {
+            height: 50px;
+        }
+        input,
+        select,
+        button {
+            outline: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            padding: 12px 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #000;
+            width: 100%;
+            color: #808080;
+            height: 45px;
+        }
+
+        input+span {
+            position: absolute;
+            top: 100%;
+            margin-top: 2px;
+            font-size: 14px;
+        }
+
+        .invalid {
+            color: #ff0000;
+        }
+
+        button {
+            display: block;
+            max-width: fit-content;
+            min-width: 140px;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            cursor: pointer;
+            background: #000;
+            color: #d7f4fa;
+            margin-top: 10px;
+            height: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            width: 35%;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        tr th:first-child,
+        tr td:first-child {
+            width: 30%;
+        }
+
+        th {
+            font-size: 17px;
+            height: 55px;
+        }
+
+        td {
+            font-size: 16px;
+            height: 40px;
+            background-color: #eafbff;
+
+        }
+        .valid {
+            color: #008000;
+        }
+
+        #availabelMilk span {
+            color: #008000;
+            background-color: #eafbff;
+            border-radius: 6px;
+            padding: 4px 10px;
+            display: inline-block;
+        }
+        #availabelMilk {
+            background-color: #d7f4fa;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Dairy Producation system</h2>
+    <div class="product_block">
+        <form onsubmit="return false" autocomplete="off">
+            <div id="milkField">
+                <div class="row">
+                    <Label><b>Total Milk (Ltr):</b></Label>
+                    <input type="text" id="totalMilk">
+                    <span></span>
+                </div>
+            </div>
+            <div class="row">
+                <Label><b>Butter Milk: </b></Label>
+                <input type="text" id="butterMilk">
+                <Label> * 1Kg/2Ltr</Label>
+            </div>
+            <div class="row">
+                <Label><b>Curd: </b></Label>
+                <input type="text" id="curd">
+                <Label> * 1Kg/3Ltr</Label>
+            </div>
+            <div class="row">
+                <Label><b>Paneer: </b></Label>
+                <input type="text" id="paneer">
+                <Label>* 1Kg/6Ltr</Label>
+            </div>
+            <div class="row">
+                <Label><b>Cheese: </b></Label>
+                <input type="text" id="cheese">
+                <Label>* 1Kg/10Ltr</Label>
+            </div>
+            <div class="row">
+                <label></label>
+                <button class="btn" id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="product_block">
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Need Milk (Ltr)</th>
+                <th>Ready / Not Ready</th>
+            </tr>
+            <tr>
+                <td>Butter Milk</td>
+                <td id="needForBm"></td>
+                <td id="readyForBm"></td>
+            </tr>
+            <tr>
+                <td>Curd</td>
+                <td id="needForC"></td>
+                <td id="readyForC"></td>
+            </tr>
+            <tr>
+                <td>Paneer</td>
+                <td id="needForP"></td>
+                <td id="readyForP"></td>
+            </tr>
+            <tr>
+                <td>Cheese</td>
+                <td id="needForCs"></td>
+                <td id="readyForCs"></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="availabelMilk"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="../js/16_dairy_product.js"></script>
+</body>
+
+</html>

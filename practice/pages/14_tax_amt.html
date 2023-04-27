@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Amount Calculater</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            line-height: 110%;
+            font-weight: 400;
+        }
+
+        h4 {
+            font-size: 22px;
+            text-align: center;
+            margin: 40px 0;
+            text-transform: uppercase;
+        }
+        h6 {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            margin-bottom: 5px;
+        }
+
+        .calc_block {
+            padding: 40px;
+            width: 550px;
+            margin: 40px auto 70px;
+            background-color: #d7f4fa;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .row:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 190px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        input,
+        select,
+        button {
+            outline: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            padding: 14px 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #000;
+            width: 100%;
+            color: #808080;
+        }
+
+        #error {
+            color: #ff0000;
+            position: absolute;
+            top: 100%;
+            font-size: 12px;
+        }
+
+        button {
+            display: block;
+            max-width: 150px;
+            text-transform: uppercase;
+            padding: 12px;
+            cursor: pointer;
+            background: #000;
+            color: #d7f4fa;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            height: 60px;
+        }
+        th,
+        td {
+            border: 1px solid #000000;
+            padding: 4px 10px;
+            text-align: center;
+            height: 40px;
+        }
+        tr th:not(:nth-child(2)) {
+            width: 38%;
+        }
+        .total_amt td {
+            border: none;
+        }
+        .total_amt td span {
+            padding: 6px 12px;
+            background-color: #FFFFFF;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Tax Amount Calculater</h4>
+    <div class="calc_block">
+        <form method="post" autocomplete="off" onsubmit="return false">
+            <div class="row">
+                <Label>Your Salary Amount:</Label>
+                <input type="text" name="salary" id="salary" placeholder="">
+                <span id="error"></span>
+            </div>
+            <div class="row">
+                <Label></Label>
+                <button id="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="calc_block">
+        <h6>* You can see here your tax amount with slab wise.</h6>
+        <table>
+            <tr>
+                <th>Tax Slab(L)</th>
+                <th>Tax Rate</th>
+                <th>Tax Amount</th>
+            </tr>
+            <tr>
+                <td>0 - 3</td>
+                <td>0%</td>
+                <td id="slab_1">---</td>
+            </tr>
+            <tr>
+                <td>3 - 6</td>
+                <td>5%</td>
+                <td id="slab_2">---</td>
+            </tr>
+            <tr>
+                <td>6 - 9</td>
+                <td>10%</td>
+                <td id="slab_3">---</td>
+            </tr>
+            <tr>
+                <td>9 - 12</td>
+                <td>15%</td>
+                <td id="slab_4">---</td>
+            </tr>
+            <tr>
+                <td>12 - 15</td>
+                <td>20%</td>
+                <td id="slab_5">---</td>
+            </tr>
+            <tr>
+                <td>Above 15</td>
+                <td>30%</td>
+                <td id="slab_6">---</td>
+            </tr>
+            <tr class="total_amt">
+                <td colspan="2">* Your total Payable tax amount:</td>
+                <td id="totalTaxAmt"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="../js/14_tax_amt.js"></script>
+</body>
+
+</html>

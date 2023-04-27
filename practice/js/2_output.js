@@ -1,6 +1,6 @@
 let nameData = prompt("Please enter your name.");
 let rnData = parseInt(prompt("Please enter your roll number."));
-let dateData = parseInt(prompt("Please enter your roll number in this formate 'DD/MM/YYYY'."));
+let dateData = parseInt(prompt("Please enter your date in this formate 'DD/MM/YYYY'."));
 
 let phyMark = parseInt(prompt("Please enter marks of pysics."));
 let chemMark = parseInt(prompt("Please enter marks of Chemistry."));
