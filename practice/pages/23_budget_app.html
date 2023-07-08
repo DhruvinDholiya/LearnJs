@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/23_budget_app.css">
+</head>
+
+<body>
+    <section id="budgetApp">
+        <div class="container">
+            <h1>Budget App</h1>
+            <div class="row">
+                <div class="form_part">
+                    <form action="" autocomplete="off" method="post" id="budgetCalcForm">
+                        <div class="row">
+                            <label>Please enter your budget: </label>
+                            <input type="number" name="budgetAmount" id="budgetAmtData">
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <button class="btn" type="submit" id="calcBtn">Calculate</button>
+                        </div>
+                        <span class="step">Step: 1</span>
+                    </form>
+                </div>
+                <div class="calc_part row">
+                    <div class="amt_block" id="budget">
+                        <h3>Budget</h3>
+                        <img src="../images/23_budget.png" alt="Budget">
+                    </div>
+                    <div class="amt_block" id="expense">
+                        <h3>Expenses</h3>
+                        <img src="../images/23_expenses.png" alt="Expenses">
+                    </div>
+                    <div class="amt_block" id="balance">
+                        <h3>Balance</h3>
+                        <img src="../images/23_balance.png" alt="Balance">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form_part">
+                    <form action="" autocomplete="off" method="post" id="addExpenseForm">
+                        <div class="row">
+                            <label>Please enter your expense: </label>
+                            <input type="text" name="expenseName" id="expenseNameData">
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <label>Please enter your expense amount: </label>
+                            <input type="number" name="expenseAmount" id="expenseAmtData">
+                            <span></span>
+                        </div>
+                        <div class="row">
+                            <button class="btn" type="submit" id="expenseBtn">Add Expense</button>
+                        </div>
+                        <span class="step">Step: 2</span>
+                    </form>
+                </div>
+                <div class="calc_part" id="expenseTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Expense Name</th>
+                                <th>Expense Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expenseList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/23_budget_app.js"></script>
+</body>
+
+</html>

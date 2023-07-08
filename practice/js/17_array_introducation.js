@@ -67,5 +67,5 @@ let demo = [10, 20, 30, 40, 50, 60];
 // let x = demo.toString();
 // console.log(x);
 
-let x = demo.splice(4, 0, "banana");
-console.log(x);
+demo.splice(1, 1, "banana");
+console.log(demo);
