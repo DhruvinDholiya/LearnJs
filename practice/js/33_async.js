@@ -46,16 +46,16 @@
 // })
 
 
-// myPromise
-// .then((res) => console.log(res))
-// .catch((error) => console.log(error))
-// .finally(() => console.log("I am always excute."));
+myPromise
+    .then((res) => console.log(res))
+    .catch((error) => console.log(error))
+    .finally(() => console.log("I am always excute."));
 
 
 //Solve with acync and await ==========
 console.log('Hanlde user start');
 
-const  getData = async () => {
+const getData = async () => {
     let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
     let data = await response.json();
     console.log(data);
