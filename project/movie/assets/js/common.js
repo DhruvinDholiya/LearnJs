@@ -269,9 +269,9 @@ const cinemaRedirect = (blockId) => {
     event.preventDefault();
 }
 // ===== redirectedCinemaId is set null when user go on cinema page without click on cinema block ===== \\
-if (window.location.pathname != "/project/movie/user/cinema.html") {
-    sessionStorage.setItem("_redirectedCinemaId", JSON.stringify(null));
-}
+// if (window.location.pathname != "/project/movie/user/cinema.html") {
+//     sessionStorage.setItem("_redirectedCinemaId", JSON.stringify(null));
+// }
 
 // ===== Redirect the page after clicking on Movie ===== \\
 const movieRedirect = (blockId) => {
@@ -281,6 +281,6 @@ const movieRedirect = (blockId) => {
     event.preventDefault();
 }
 // ===== redirectedMovieId is set null when user go on movie page without click on movie block ===== \\
-if (window.location.pathname != "/project/movie/user/movie.html") {
-    sessionStorage.setItem("_redirectedMovieId", JSON.stringify(null));
-}
+// if (window.location.pathname != "/project/movie/user/movie.html") {
+//     sessionStorage.setItem("_redirectedMovieId", JSON.stringify(null));
+// }
